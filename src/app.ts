@@ -7,11 +7,12 @@ import { userRouter } from './user/user.route';
 const app = express();
 
 app.use(cors());
-app.use(helmet);
-app.use(express.json);
+app.use(helmet());
+app.use(express.json());
 
 app.use((_req: Request, res: Response, next: NextFunction) => {
   res.header('Access-Control-Allow-Origin', '*');
+  console.log('running');
   res.header(
     'Access-Control-Allow-Headers',
     'Origin, X-Requested-With, Content-Type, Accept, AUTHORIZATION'
@@ -19,7 +20,8 @@ app.use((_req: Request, res: Response, next: NextFunction) => {
   next();
 });
 
-app.get('/ping', (_req: Request, res: Response) => {
+app.get('/', (req: Request, res: Response) => {
+  console.log('connect');
   res.send('pong');
 });
 

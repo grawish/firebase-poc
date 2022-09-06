@@ -4,7 +4,7 @@ import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
-describe('User Service', () => {
+describe('User service', () => {
   describe('Add a User', () => {
     it('when we pass name and email we should be able to create a test user', async (done) => {
       // Arrange

@@ -24,14 +24,15 @@
   },
   "homepage": "https://github.com/pshaddel/ts-express-prisma-rest#readme",
   "dependencies": {
-    "@prisma/client": "^2.28.0",
+    "@prisma/client": "^4.3.1",
     "@types/helmet": "^4.0.0",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "firebase-admin": "^11.0.1",
     "helmet": "^4.6.0",
     "npm-check-updates": "^11.8.3",
-    "prisma": "^2.28.0",
+    "prisma": "^4.3.1",
     "shapely": "^0.2.1"
   },
   "devDependencies": {

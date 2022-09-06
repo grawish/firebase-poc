@@ -4,4 +4,4 @@
     "out": "docs",
     "name": "Centralised Services Middleware",
     "plugin": "typedoc-plugin-markdown"
-  }
+}
