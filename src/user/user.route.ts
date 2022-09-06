@@ -12,9 +12,9 @@ userRouter.post('/users', async (req: Request, res: Response) => {
     id: req.body.id,
     name: req.body.name
   };
-  console.log(prisma.user);
+  console.log(userFetched);
 
-  const userData = await prisma.user.findMany({
+  const userData = await prisma.user.findUnique({
     where: {
       id: userFetched.id
     }
@@ -25,7 +25,7 @@ userRouter.post('/users', async (req: Request, res: Response) => {
     const userGroup = await createGroup(userFetched.id, req.body.token);
     if (userGroup) {
       const userDetail = await createUser({ ...userFetched, token: userGroup });
-      await res.json(userDetail);
+      res.json(userDetail);
     }
   } else {
     const existingUser = await prisma.user.findUnique({
